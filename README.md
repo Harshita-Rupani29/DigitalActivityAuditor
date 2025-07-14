@@ -1,6 +1,6 @@
-# DigitalActivityAuditor 
+# DigitalActivityAuditor - Global Input Listener (JNativeHook & JNA Example)
 
-[[Java CI with Maven](https://github.com/Harshita-Rupani29/DigitalActivityAuditor/actions/workflows/maven.yml/badge.svg)](https://github.com/Harshita-Rupani29/DigitalActivityAuditor/actions/workflows/maven.yml)
+[![Java CI with Maven](https://github.com/Harshita-Rupani29/DigitalActivityAuditor/actions/workflows/maven.yml/badge.svg)](https://github.com/Harshita-Rupani29/DigitalActivityAuditor/actions/workflows/maven.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
@@ -28,13 +28,14 @@ The core purpose of this repository is to serve as an educational example for:
 * Implementing **global keyboard and mouse listeners** to capture input events across the operating system.
 * Understanding the integration of **native libraries (JNativeHook, JNA)** within a standard Java Maven project.
 * Illustrating the use of JNA for **Windows-specific native calls**, such as enumerating active windows or interacting with the clipboard.
-* **Applying Data Structures and Algorithms (DSAA)** concepts to efficiently process, organize, and present raw keystroke data into a more readable and meaningful format (e.g., forming words from individual key presses and associating them with application context).
+* **Applying Data Structures and Algorithms (DSA)** concepts to efficiently process, organize, and present raw keystroke data into a more readable and meaningful format (e.g., forming words from individual key presses and associating them with application context).
 
 **Disclaimer:** This project is intended for educational and experimental purposes only to demonstrate the capabilities of JNativeHook and JNA for activity monitoring. Using such functionality without explicit consent, proper legal authorization, and adherence to privacy regulations can have serious ethical and legal consequences. Please ensure responsible and lawful use.
 
 ## Features
 
 * **Global Keyboard Monitoring:** Captures key press and release events system-wide.
+* **Global Mouse Monitoring:** Captures mouse click, press, release, move, drag, and wheel events system-wide.
 * **Intelligent Keystroke Formatting:** Processes individual keystrokes into readable words or phrases using fundamental Data Structures for improved output readability.
 * **Window Enumeration:** Utilizes JNA to identify and log the currently focused window title and application path.
 * **Clipboard Monitoring:** Tracks changes to the system clipboard content.
@@ -42,7 +43,7 @@ The core purpose of this repository is to serve as an educational example for:
 
 ## Implementation Details
 
-This Java-based application leverages `jnativehook` to capture keystrokes, and *crucially applies concepts from Data Structures and Algorithms (DSAA)* to efficiently process and manage the captured data. As Java files themselves run inside the JVM, they are unable to log keystrokes directly across the system. The `jnativehook` library provides a robust system-wide hook for capturing these keystrokes.
+This Java-based application leverages `jnativehook` to capture keystrokes, and *crucially applies concepts from Data Structures and Algorithms (DSA)* to efficiently process and manage the captured data. As Java files themselves run inside the JVM, they are unable to log keystrokes directly across the system. The `jnativehook` library provides a robust system-wide hook for capturing these keystrokes.
 
 The captured keystrokes are formatted using specific Data Structures, such as combining individual keystrokes into words or phrases. For example, when the spacebar or a special key (like Enter, Period, or Backspace) is pressed, all the keystrokes accumulated in a `Queue` are dequeued to form a complete word. This ensures that the output is more readable and user-friendly.
 
